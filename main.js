@@ -7,6 +7,8 @@ async function getPkmn() {
     return datos
 }
 
+//Buttons
+
 function button1() {
     console.log("FIRST button pressed")
 }
@@ -22,3 +24,13 @@ function button3() {
 function button4() {
     console.log("FOURTH button pressed")
 }
+
+//Buttons
+
+//Quiz Generator
+
+function Quizgenerator(Questions, quizContainer, resultsContainer, submitButton) {
+
+}
+
+//Quiz Generator
