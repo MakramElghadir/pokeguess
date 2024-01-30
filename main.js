@@ -7,10 +7,11 @@ async function getPkmn() {
     return datos
 }
 
-//Buttons
+
 
 function button1() {
     console.log("FIRST button pressed")
+    pokemonFetcher()
 }
 
 function button2() {
@@ -25,12 +26,10 @@ function button4() {
     console.log("FOURTH button pressed")
 }
 
-//Buttons
-
-//Quiz Generator
-
-function Quizgenerator(Questions, quizContainer, resultsContainer, submitButton) {
-
+function pokemonFetcher() {
+    let randomValue = 2 
+    fetch(`https://pokeapi.co/api/v2/pokemon/${randomValue}`)
+        .then(function(datos){
+            console.log(datos);
+    })
 }
-
-//Quiz Generator
