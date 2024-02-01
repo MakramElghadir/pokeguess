@@ -28,9 +28,6 @@ async function pkmnCollector(){
     console.log(pkmn1.imagen)
 
 
-    //const imageCatcher = document.querySelector(".imagen") selection DONE
-    //imageCatcher.src = pkmn1.imagen
-    //imageCatcher.className = "hidden"
 
     updatepkmn(pkmn1.imagen,"hidden")
 
