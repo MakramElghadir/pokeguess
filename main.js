@@ -1,35 +1,28 @@
 console.log("hola mundo")
+let randomValue = Math.floor(Math.random() * 255) + 1
+
 
 async function getPkmn() {
-    const url = `https://pokeapi.co/api/v2/pokemon/1`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${randomValue}`;
     const respuesta = await fetch(url);
     const datos = await respuesta.json();
     return datos
 }
 
 
+async function pkmnCollector(){
+    const pkmn1 = await getPkmn()
+    const pkmn2 = await getPkmn()
+    const pkmn3 = await getPkmn()
+    const pkmn4 = await getPkmn()
 
-function button1() {
-    console.log("FIRST button pressed")
-    pokemonFetcher()
+
+    console.log(pkmn1.name)
+    console.log(pkmn2.name)
+    console.log(pkmn3.name)
+    console.log(pkmn4.name)
+    console.log(pkmn1.sprites.front_default)
+    
 }
 
-function button2() {
-    console.log("SECOND button pressed")
-}
-
-function button3() {
-    console.log("SECOND button pressed")
-}
-
-function button4() {
-    console.log("FOURTH button pressed")
-}
-
-function pokemonFetcher() {
-    let randomValue = 2 
-    fetch(`https://pokeapi.co/api/v2/pokemon/${randomValue}`)
-        .then(function(datos){
-            console.log(datos);
-    })
-}
+pkmnCollector()
