@@ -1,9 +1,13 @@
 console.log("hola mundo")
+let randomValue = Math.floor(Math.random() * 751) + 1
+
+function randomizer() {
+    return Math.floor(Math.random() * 751) + 1
+}
 
 
-
-async function getPkmn() {
-    let randomValue = Math.floor(Math.random() * 751) + 1
+async function getPkmn(randomValue) {
+    
     const url = `https://pokeapi.co/api/v2/pokemon/${randomValue}`;
     const respuesta = await fetch(url);
     const datos = await respuesta.json();
@@ -21,20 +25,35 @@ async function getPkmn() {
 
 
 async function pkmnCollector(){
-    const pkmn1 = await getPkmn()
-    const pkmn2 = await getPkmn()
-    const pkmn3 = await getPkmn()
-    const pkmn4 = await getPkmn()
+    
+    const randomplmnID1 = randomizer()
+    const randomplmnID2 = randomizer()
+    const randomplmnID3 = randomizer()
+    const randomplmnID4 = randomizer()
+    
+
+    const pkmn1 = await getPkmn(randomplmnID1)
+    const pkmn2 = await getPkmn(randomplmnID2)
+    const pkmn3 = await getPkmn(randomplmnID3)
+    const pkmn4 = await getPkmn(randomplmnID4)
     console.log(pkmn1.imagen)
+    console.log(pkmn1.nombre)
+    console.log(pkmn2.nombre)
 
 
 
     updatepkmn(pkmn1.imagen,"hidden")
 
 
+    document.querySelector(".but1").innerHTML = pkmn1.nombre
+    document.querySelector(".but2").innerHTML = pkmn2.nombre
+    document.querySelector(".but3").innerHTML = pkmn3.nombre
+    document.querySelector(".but4").innerHTML = pkmn4.nombre
 }
 
-
+async function button1() {
+    
+}
 
 function updatepkmn(sprite,mode){
     const img = document.querySelector(".pkmn-img");
