@@ -1,5 +1,9 @@
 console.log("hola mundo")
-let randomValue = Math.floor(Math.random() * 751) + 1
+
+function buttonRandom() {
+    console.log(Math.floor(Math.random() * 4) + 1)
+    return Math.floor(Math.random() * 4) + 1
+}
 
 function randomizer() {
     return Math.floor(Math.random() * 751) + 1
@@ -30,6 +34,12 @@ async function pkmnCollector(){
     const randomplmnID2 = randomizer()
     const randomplmnID3 = randomizer()
     const randomplmnID4 = randomizer()
+
+    const buttonRandomizer1 = buttonRandom()
+    const buttonRandomizer2 = buttonRandom()
+    const buttonRandomizer3 = buttonRandom()
+    const buttonRandomizer4 = buttonRandom()
+    
     
 
     const pkmn1 = await getPkmn(randomplmnID1)
@@ -45,10 +55,10 @@ async function pkmnCollector(){
     updatepkmn(pkmn1.imagen,"hidden")
 
 
-    document.querySelector(".but1").innerHTML = pkmn1.nombre
-    document.querySelector(".but2").innerHTML = pkmn2.nombre
-    document.querySelector(".but3").innerHTML = pkmn3.nombre
-    document.querySelector(".but4").innerHTML = pkmn4.nombre
+    document.querySelector(`.but${buttonRandomizer1}`).innerHTML = pkmn1.nombre
+    document.querySelector(`.but${buttonRandomizer2}`).innerHTML = pkmn2.nombre
+    document.querySelector(`.but${buttonRandomizer3}`).innerHTML = pkmn3.nombre
+    document.querySelector(`.but${buttonRandomizer4}`).innerHTML = pkmn4.nombre
 }
 
 async function button1() {
