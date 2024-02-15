@@ -5,11 +5,6 @@ const randomplmnID3 = randomizer()
 const randomplmnID4 = randomizer()
 
 
-function buttonRandom() {
-    console.log(Math.floor(Math.random() * 4) + 1)
-    return Math.floor(Math.random() * 4) + 1
-}
-
 function randomizer() {
     return Math.floor(Math.random() * 751) + 1
 }
@@ -66,6 +61,17 @@ function updateAwnser(awnser) {
     const awnser2 = document.querySelector(`.but2`)
     const awnser3 = document.querySelector(`.but3`)
     const awnser4 = document.querySelector(`.but4`)
+
+    const buttonRandom = [awnser1, awnser2, awnser3, awnser4]
+    buttonRandom.sort(() => Math.random() -0.5)
+
+    buttonRandom[0].value = awnser.winner
+    buttonRandom[1].value = awnser.looser2
+    buttonRandom[2].value = awnser.looser3
+    buttonRandom[3].value = awnser.looser4
+    
+
+
 }
 
 function updatepkmn(sprite,mode){
