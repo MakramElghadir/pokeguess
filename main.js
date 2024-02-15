@@ -34,49 +34,39 @@ async function getPkmn(randomValue) {
 
 
 async function pkmnCollector(){
-    
-    
 
-    const buttonRandomizer1 = buttonRandom()
-    const buttonRandomizer2 = buttonRandom()
-    const buttonRandomizer3 = buttonRandom()
-    const buttonRandomizer4 = buttonRandom()
-    
-    
-
-    const pkmn1 = await getPkmn(randomplmnID1)
-    const pkmn2 = await getPkmn(randomplmnID2)
-    const pkmn3 = await getPkmn(randomplmnID3)
-    const pkmn4 = await getPkmn(randomplmnID4)
+    const pkmn1 = await getPkmn(1)
+    const pkmn2 = await getPkmn(2)
+    const pkmn3 = await getPkmn(3)
+    const pkmn4 = await getPkmn(4)
     console.log(pkmn1.imagen)
     console.log(pkmn1.nombre)
     console.log(pkmn2.nombre)
 
+    const questionSheet  = {
+        winner: pkmn1.name,
+        winningImage: pkmn1.imagen,
+        looser2: pkmn2.name,
+        looser3: pkmn3.name,
+        looser4: pkmn4.name
+    }
+
+    updatepkmn(questionSheet.winningImage,"hidden")
 
 
-    updatepkmn(pkmn1.imagen,"hidden")
-
-
-    document.querySelector(`.but${buttonRandomizer1}`).innerHTML = pkmn1.nombre
-    document.querySelector(`.but${buttonRandomizer2}`).innerHTML = pkmn2.nombre
-    document.querySelector(`.but${buttonRandomizer3}`).innerHTML = pkmn3.nombre
-    document.querySelector(`.but${buttonRandomizer4}`).innerHTML = pkmn4.nombre
+    document.querySelector(`.but1`).innerHTML = pkmn1.nombre
+    document.querySelector(`.but2`).innerHTML = pkmn2.nombre
+    document.querySelector(`.but3`).innerHTML = pkmn3.nombre
+    document.querySelector(`.but4`).innerHTML = pkmn4.nombre
 }
 
-async function button1() {
-    const buttonResult1 = await getPkmn(1)
-    console.log(buttonResult1.nombre)
-}
-async function button2() {
-    console.log("Button 2")
-}
-async function button3() {
-    console.log("Button 3")
-}
-async function button4() {
-    console.log("Button 4")
-}
 
+function updateAwnser(awnser) {
+    const awnser1 = document.querySelector(`.but1`)
+    const awnser2 = document.querySelector(`.but2`)
+    const awnser3 = document.querySelector(`.but3`)
+    const awnser4 = document.querySelector(`.but4`)
+}
 
 function updatepkmn(sprite,mode){
     const img = document.querySelector(".pkmn-img");
