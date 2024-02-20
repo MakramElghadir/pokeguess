@@ -78,6 +78,18 @@ function updateAwnser(awnser) {
 
 
 }
+function Showpokemons(pkmnname1, pkmnname2, pkmnname3, pkmnname4) {
+    const ButtonCatchPokemon1 = document.querySelector(".bu1")
+    const ButtonCatchPokemon2 = document.querySelector(".bu2")
+    const ButtonCatchPokemon3 = document.querySelector(".bu3")
+    const ButtonCatchPokemon4 = document.querySelector(".bu4")
+
+    ButtonCatchPokemon1.value = `${pkmnname1}`
+    ButtonCatchPokemon2.value = `${pkmnname2}`
+    ButtonCatchPokemon3.value = `${pkmnname3}`
+    ButtonCatchPokemon4.value = `${pkmnname4}`
+    
+}
 
 function updatepkmn(sprite,mode){
     const img = document.querySelector(".pkmn-img");
@@ -85,3 +97,5 @@ function updatepkmn(sprite,mode){
 }
 
 pkmnCollector()
+Showpokemons(pkmnname1, pkmnname2, pkmnname3, pkmnname4)
+
