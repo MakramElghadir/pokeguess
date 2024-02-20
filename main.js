@@ -1,13 +1,14 @@
 console.log("hola mundo")
+
+function randomizer() {
+    return Math.floor(Math.random() * 751) + 1
+}
+
 const randomplmnID1 = randomizer()
 const randomplmnID2 = randomizer()
 const randomplmnID3 = randomizer()
 const randomplmnID4 = randomizer()
 
-
-function randomizer() {
-    return Math.floor(Math.random() * 751) + 1
-}
 
 
 async function getPkmn(randomValue) {
@@ -30,13 +31,16 @@ async function getPkmn(randomValue) {
 
 async function pkmnCollector(){
 
-    const pkmn1 = await getPkmn(1)
-    const pkmn2 = await getPkmn(2)
-    const pkmn3 = await getPkmn(3)
-    const pkmn4 = await getPkmn(4)
+    
+    const pkmn1 = await getPkmn(randomplmnID1)
+    const pkmn2 = await getPkmn(randomplmnID2)
+    const pkmn3 = await getPkmn(randomplmnID3)
+    const pkmn4 = await getPkmn(randomplmnID4)
     console.log(pkmn1.imagen)
     console.log(pkmn1.nombre)
     console.log(pkmn2.nombre)
+
+    Showpokemons(pkmn1.nombre, pkmn2.nombre, pkmn3.nombre, pkmn4.nombre)
 
     const questionSheet  = {
         winner: pkmn1.name,
@@ -53,6 +57,7 @@ async function pkmnCollector(){
     document.querySelector(`.but2`).innerHTML = pkmn2.nombre
     document.querySelector(`.but3`).innerHTML = pkmn3.nombre
     document.querySelector(`.but4`).innerHTML = pkmn4.nombre
+    
 }
 
 
